@@ -1,2 +1,2 @@
 # ClimatePing
-Check weather conditions on a given location
+Simple Flask app to check weather conditions on a given location
