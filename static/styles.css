@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: ghostwhite;
+    color: darkgray;
+}
+
+h1 {
+    color: coral;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: lavender;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid gray;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: lightcoral;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:hover {
+    background-color: gray;
+}
+
+td {
+    background-color: lavender;
+}
