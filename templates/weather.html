@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather Ping</title>
+  </head>
+  <body>
+    <h1>Current Weather</h1>
+    <ul>
+      <li>Temperature (2m): {{ current_temperature_2m }}°C</li>
+      <li>Apparent Temperature: {{ current_apparent_temperature }}°C</li>
+      <li>Precipitation: {{ current_precipitation }} mm</li>
+    </ul>
+    <h1>Daily Forecast</h1>
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Temperature (2m) Max</th>
+        <th>Temperature (2m) Min</th>
+        <th>Precipitation Probability Max</th>
+      </tr>
+      {% for index, row in daily_dataframe.iterrows() %}
+      <tr>
+        <td>{{ row.date }}</td>
+        <td>{{ row.temperature_2m_max }}°C</td>
+        <td>{{ row.temperature_2m_min }}°C</td>
+        <td>{{ row.precipitation_probability_max }}%</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
