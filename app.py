@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 import openmeteo_requests
 import requests_cache
 import pandas as pd
@@ -7,12 +7,17 @@ from retry_requests import retry
 app = Flask(__name__)
 
 
-cache_session = requests_cache.CachedSession('.cache', expire_after=3600)
+cache_session = requests_cache.CachedSession(".cache", expire_after=3600)
 retry_session = retry(cache_session, retries=5, backoff_factor=0.2)
 openmeteo = openmeteo_requests.Client(session=retry_session)
 
 
-@app.route('/ping')
+@app.route("/")
+def index():
+    return redirect(url_for("get_weather"))
+
+
+@app.route("/ping")
 def get_weather():
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
@@ -49,12 +54,12 @@ def get_weather():
 
     daily_dataframe = pd.DataFrame(data=daily_data)
 
-    return render_template('weather.html', 
-                           current_temperature_2m=current_temperature_2m, 
-                           current_apparent_temperature=current_apparent_temperature, 
-                           current_precipitation=current_precipitation, 
+    return render_template("weather.html",
+                           current_temperature_2m=current_temperature_2m,
+                           current_apparent_temperature=current_apparent_temperature,
+                           current_precipitation=current_precipitation,
                            daily_dataframe=daily_dataframe)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
