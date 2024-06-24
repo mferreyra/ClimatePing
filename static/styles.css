@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: ghostwhite;
-    color: darkgray;
+    background-color: aliceblue;
+    color: darkslategray;
 }
 
 h1 {
-    color: coral;
+    color: steelblue;
 }
 
 ul {
@@ -15,7 +15,7 @@ ul {
 }
 
 ul li {
-    background-color: lavender;
+    background-color: whitesmoke;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
@@ -28,13 +28,13 @@ table {
 }
 
 th, td {
-    border: 1px solid gray;
+    border: 1px solid lightgray;
     padding: 8px;
     text-align: center;
 }
 
 th {
-    background-color: lightcoral;
+    background-color: steelblue;
     color: white;
 }
 
@@ -43,9 +43,9 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-    background-color: gray;
+    background-color: lightgray;
 }
 
 td {
-    background-color: lavender;
+    background-color: whitesmoke;
 }

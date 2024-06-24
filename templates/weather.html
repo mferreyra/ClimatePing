@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>Weather Ping</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
   </head>
   <body>
     <h1>Current Weather in La Plata</h1>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="ClimatePing Logo" height="50">
     <ul>
       <li>Temperature : {{ current_temperature_2m | round(1) }}°C</li>
       <li>Apparent Temperature: {{ current_apparent_temperature | round(1) }}°C</li>
